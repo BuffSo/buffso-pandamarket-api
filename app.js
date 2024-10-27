@@ -11,8 +11,12 @@ const app = express();
 app.use(express.json());       // JSON 요청 파싱 미들웨어
 
 const corsOptions = {
-  //origin: ['http://127.0.0.1:5500', 'http://localhost:5500', 'https://buffso-pandamarket.netlify.app']
-  origin: ['http://127.0.0.1:3000', 'http://localhost:3000', 'http://127.0.0.1:3001', 'http://localhost:3001', 'https://buffso-pandamarket.netlify.app']
+  origin: [
+    'http://127.0.0.1:3000', 
+    'http://localhost:3000', 
+    'http://127.0.0.1:3001', 
+    'http://localhost:3001', 
+    'https://buffso-pandamarket.netlify.app']
 }
 app.use(cors(corsOptions));
 
@@ -29,6 +33,11 @@ app.use('/products', productsRoute);
 app.use('/products', productCommentsRoute);
 app.use('/articles', articlesRoute);
 app.use('/articles', articleCommentsRoute);
+
+app.use((req, res, next) => {
+  console.log(`Received ${req.method} request for ${req.url}`);
+  next();
+});
 
 // 404 Not Found 처리
 app.use((_, res) => {

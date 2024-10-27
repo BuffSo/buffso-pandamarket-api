@@ -15,7 +15,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "post-deploy": "npx prisma db seed"
   },
   "prisma": {
     "seed": "node prisma/seed.js"
