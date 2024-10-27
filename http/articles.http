@@ -5,6 +5,9 @@ GET http://localhost:3000/articles
 GET http://localhost:3000/articles?orderBy=oldest
 
 ###
+GET http://localhost:3000/articles?orderBy=recent
+
+###
 GET http://localhost:3000/articles?orderBy=recent&page=1&pageSize=2
 
 ###
