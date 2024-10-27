@@ -14,8 +14,7 @@ const corsOptions = {
   origin: [
     'http://127.0.0.1:3000', 
     'http://localhost:3000', 
-    'http://127.0.0.1:3001', 
-    'http://localhost:3001', 
+    'https://buffso-pandamarket.vercel.app',
     'https://buffso-pandamarket.netlify.app']
 }
 app.use(cors(corsOptions));
